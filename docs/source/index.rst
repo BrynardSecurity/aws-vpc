@@ -1,10 +1,10 @@
-.. AWS Kubernetes VPC documentation master file, created by
-   sphinx-quickstart on Sat Nov 20 10:48:29 2021.
+.. Terraform AWS VPC documentation master file, created by
+   sphinx-quickstart on Sat Nov 20 11:30:46 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to AWS Kubernetes VPC's documentation!
-==============================================
+Welcome to Terraform AWS VPC's documentation!
+=============================================
 
 .. toctree::
    :maxdepth: 2

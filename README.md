@@ -10,10 +10,18 @@
 
 ### ✨ [Demo](https://demopage.com/url)
 
+## Requirements
+ <ul>
+    <li><strong>Git</strong> >= <em>2.32.0</em></li>
+    <li><strong>Terraform<strong> >= <em>0.13.1</em></li>
+    <li><string>Docker</string> >= <em>20.10.8</em></li>
+ </ul>
+
 ## Install
+# To run locally...
 
 ```sh
-Install command
+curl -sSFL https://github.com/BrynardSecurity/
 ```
 
 ## Usage

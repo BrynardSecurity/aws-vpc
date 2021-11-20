@@ -3,17 +3,17 @@ provider "aws" {
 }
 
 locals {
-    name = "kubernetes-dev"
-    region = "us-east-2"
+    name = var.vpc_name
+    region = var.aws_region
     tags = {
-        Owner = "BrynardSecurity"
-        Environment = "Dev"
-        Name = "kubernetes-dev"
+        Owner = var.aws_account
+        Environment = var.environment
+        Name = var.vpc_name
     }
 }
 
 module "vpc_example_complete-vpc" {
-  source  = "terraform-aws-modules/vpc/aws//examples/complete-vpc"
+  source  = "terraform-aws-modules/vpc/aws"
   version = "3.11.0"
 
   name = local.name
@@ -39,7 +39,7 @@ module "vpc_example_complete-vpc" {
       IP1 = {
           bgp_asn       = 65112
           ip_address    = var.customer_gateway_ip
-          device_name   = "xgs.ustxa.fw.brynardsecurity.com"
+          device_name   = var.device_name
       }
   }
   enable_vpn_gateway        = true
@@ -59,6 +59,6 @@ module "vpc_endpoints_nocreate" {
 }
 
 data "aws_security_group" "default" {
-    name    = "sg-kubernetes-dev"
+    name    = "sg-${var.vpc_name}-${var.environment}"
     vpc_id  = module.vpc.vpc_id
 }

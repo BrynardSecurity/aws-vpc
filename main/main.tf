@@ -1,0 +1,64 @@
+provider "aws" {
+    region = "us-east-2"
+}
+
+locals {
+    name = "kubernetes-dev"
+    region = "us-east-2"
+    tags = {
+        Owner = "BrynardSecurity"
+        Environment = "Dev"
+        Name = "kubernetes-dev"
+    }
+}
+
+module "vpc_example_complete-vpc" {
+  source  = "terraform-aws-modules/vpc/aws//examples/complete-vpc"
+  version = "3.11.0"
+
+  name = local.name
+  cidr = 10.0.0.0/8
+
+  azs                   = ["${local.region}a", "${local.region}b", "${local.region}c"]
+  private_subnets       = ["10.20.1.0/24", "10.20.2.0/24", "10.20.3.0/24"]
+  public_subnets        = ["10.20.11.0/24", "10.20.12.0/24", "10.20.13.0/24"]
+
+  manage_default_route_table    = true
+  default_route_table_tags      = { DefaultRouteTable = true }
+  
+  enable_dns_hostname           = true
+  enable_dns_support            = true
+
+  enable_classiclink                = true
+  enable_classiclink_dns_support    = true
+
+  enable_nat_gateway            = true
+  single_nat_gateway            = true
+
+  customer_gateways = {
+      IP1 = {
+          bgp_asn       = 65112
+          ip_address    = var.customer_gateway_ip
+          device_name   = "xgs.ustxa.fw.brynardsecurity.com"
+      }
+  }
+  enable_vpn_gateway        = true
+  
+  enable_dhcp_options       = false
+  
+  manage_default_security_group     = true
+  default_security_group_ingress    = []
+  default_security_group_egress     = []
+
+  enable_flow_log                            = false
+}
+
+module "vpc_endpoints_nocreate" {
+    source = "../../modules/vpc-endpoints"
+    create = false
+}
+
+data "aws_security_group" "default" {
+    name    = "sg-kubernetes-dev"
+    vpc_id  = module.vpc.vpc_id
+}

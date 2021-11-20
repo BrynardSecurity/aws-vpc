@@ -6,4 +6,4 @@ git clone --depth 1 \
 ;
 
 cd dev-aws-kubernetes-vpc
-git checkout master -- terraform
+git checkout main -- terraform

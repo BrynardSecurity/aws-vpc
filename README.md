@@ -21,7 +21,7 @@
 # To run locally...
 
 ```sh
-curl -sSFL https://tinyurl.com/m9m7evw | bash
+curl -sSL https://raw.githubusercontent.com/BrynardSecurity/dev-aws-kubernetes-vpc/main/scripts/install.sh | bash
 ```
 
 ## Usage

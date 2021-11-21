@@ -1,3 +1,13 @@
+terraform {
+    backend "remote" {
+        organization = "BrynardSecurity-test"
+
+        workspaces {
+            name = "AWS-VPC_Devops-Test"
+        }
+    }
+}
+
 provider "aws" {
     region = "us-east-2"
 }
@@ -6,7 +16,8 @@ locals {
     name = var.vpc_name
     region = var.aws_region
     tags = {
-        Owner = var.aws_account
+        Account ID = var.aws_account
+        Account Alias = var.aws_account_alias
         Environment = var.environment
         Name = var.vpc_name
     }

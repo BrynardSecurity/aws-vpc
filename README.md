@@ -18,10 +18,18 @@
  </ul>
 
 ## Install
-# To run locally...
+
+To install, run the shell script below:
+
+<ins>Mac OS<ins>
 
 ```sh
-curl -sSL https://raw.githubusercontent.com/BrynardSecurity/dev-aws-kubernetes-vpc/main/scripts/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/BrynardSecurity/dev-aws-kubernetes-vpc/main/scripts/mac-install.sh | bash
+```
+<ins>Linux<ins>
+
+```sh
+curl -sSL https://raw.githubusercontent.com/BrynardSecurity/dev-aws-kubernetes-vpc/main/scripts/linux-install.sh | bash
 ```
 
 ## Usage
@@ -29,7 +37,17 @@ curl -sSL https://raw.githubusercontent.com/BrynardSecurity/dev-aws-kubernetes-v
 ```sh
 Usage commands go here
 ```
+You should be in the projects terraform directory. If not, change directories to the terraform directory. 
 
+Edit the .env file and replace the default values with your AWS account's ACCESS_KEYS and SECRET_KEY_ID values.
+
+For more information on finding your AWS Access Key, please see the documentation.
+
+```sh
+sed -i 's/ACCESS_KEY/<Actual Access Key Value>/g' .env
+sed -i 's/SECRET_KEY/<Actual Secret Key Value/g>' .env
+
+```
 ## Run tests
 
 ```sh

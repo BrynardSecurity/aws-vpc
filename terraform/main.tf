@@ -72,8 +72,3 @@ module "vpc_endpoints_nocreate" {
   source = "terraform-aws-modules/vpc/aws//modules/vpc-endpoints"
   create = false
 }
-
-data "aws_security_group" "default" {
-  name   = "sg-${var.vpc_name}-${var.environment}"
-  vpc_id = module.vpc.vpc_id
-}

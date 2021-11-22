@@ -16,8 +16,8 @@ locals {
     name = var.vpc_name
     region = var.aws_region
     tags = {
-        Account ID = var.aws_account
-        Account Alias = var.aws_account_alias
+        "Account ID" = var.aws_account
+        "Account Alias" = var.aws_account_alias
         Environment = var.environment
         Name = var.vpc_name
     }
@@ -28,7 +28,7 @@ module "vpc_example_complete-vpc" {
   version = "3.11.0"
 
   name = local.name
-  cidr = 10.0.0.0/8
+  cidr = "10.0.0.0/8"
 
   azs                   = ["${local.region}a", "${local.region}b", "${local.region}c"]
   private_subnets       = ["10.20.1.0/24", "10.20.2.0/24", "10.20.3.0/24"]
@@ -65,7 +65,7 @@ module "vpc_example_complete-vpc" {
 }
 
 module "vpc_endpoints_nocreate" {
-    source = "../../modules/vpc-endpoints"
+    source = "terraform-aws-modules/vpc/aws//modules/vpc-endpoints"
     create = false
 }
 

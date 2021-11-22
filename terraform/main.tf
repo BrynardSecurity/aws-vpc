@@ -28,11 +28,11 @@ module "vpc" {
   version = "3.11.0"
 
   name = local.name
-  cidr = "10.0.0.0/16"
+  cidr = var.cidr
 
   azs             = ["${local.region}a", "${local.region}b", "${local.region}c"]
-  private_subnets = ["10.20.1.0/24", "10.20.2.0/24", "10.20.3.0/24"]
-  public_subnets  = ["10.20.11.0/24", "10.20.12.0/24", "10.20.13.0/24"]
+  private_subnets = ["20.10.1.0/24", "20.10.2.0/24", "20.10.3.0/24"]
+  public_subnets  = ["20.10.11.0/24", "20.10.12.0/24", "20.10.13.0/24"]
 
   manage_default_route_table = true
   default_route_table_tags   = { DefaultRouteTable = true }

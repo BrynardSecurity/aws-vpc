@@ -73,3 +73,7 @@ module "vpc_endpoints_nocreate" {
   create = false
 }
 
+data "aws_security_group" "default" {
+  name   = "${local.name}-${local.build_date}"
+  vpc_id = module.vpc.vpc_id
+}

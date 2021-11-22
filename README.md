@@ -1,7 +1,8 @@
 # Welcome to Terraform AWS VPC Template 👋
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-latest-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://dev-aws-kubernetes-vpc.readthedocs.io/en/latest/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/)
+![Issues](https://img.shields.io/github/issues/BrynardSecurity/aws-vpc?color=yellow)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/BrynardSecurity/aws-vpc/blob/main/LICENSE.md)
 [![Twitter: DevopsPleb](https://img.shields.io/twitter/follow/DevopsPleb.svg?style=social)](https://twitter.com/DevopsPleb)
 
 > Terraform template for simple AWS VPC

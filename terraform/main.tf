@@ -38,7 +38,7 @@ module "vpc_example_complete-vpc" {
   default_route_table_tags   = { DefaultRouteTable = true }
 
   enable_dns_hostnames = true
-  enable_dns_support  = true
+  enable_dns_support   = true
 
   enable_classiclink             = true
   enable_classiclink_dns_support = true

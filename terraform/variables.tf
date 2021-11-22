@@ -20,3 +20,6 @@ variable "device_name" {
 variable "environment" {
   description = "Deployment environment. Possible values: Prod, Staging, Test, Dev."
 }
+variable "cidr" {
+  description = "CIDR range for VPC deployment. Possible values: 10.0.0.0/16, 20.10.0.0/16"
+}

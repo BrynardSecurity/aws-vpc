@@ -49,6 +49,12 @@ on:
     branches:
     - test
   pull_request:
+    branches:
+    - prod
+    tags:
+    - v1.*
+
+
 
 jobs:
   terraform:

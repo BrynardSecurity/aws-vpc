@@ -17,3 +17,6 @@ variable "customer_gateway_ip" {
 variable "device_name" {
   description = "Customer gateway device name."
 }
+variable "environment" {
+  description = "Deployment environment. Possible values: Prod, Staging, Test, Dev."
+}

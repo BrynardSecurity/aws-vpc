@@ -23,3 +23,5 @@ variable "environment" {
 variable "cidr" {
   description = "CIDR range for VPC deployment. Possible values: 10.0.0.0/16, 20.10.0.0/16"
 }
+variable "build_branch" {}
+variable "build_repo" {}

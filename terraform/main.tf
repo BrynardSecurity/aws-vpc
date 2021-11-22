@@ -14,12 +14,16 @@ provider "aws" {
 
 locals {
   name   = var.vpc_name
+  build_date = formatdate("YYYY-MM-DD")
+  build_branch = var.build_branch
   region = var.aws_region
   tags = {
     "Account ID"    = var.aws_account
     "Account Alias" = var.aws_account_alias
     Environment     = var.environment
     Name            = var.vpc_name
+    "Build Branch"  = var.build_branch
+    "Build Repo"    = var.build_repo
   }
 }
 
@@ -27,7 +31,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.11.0"
 
-  name = local.name
+  name = "${local.name}-${local.build_date}"
   cidr = var.cidr
 
   azs             = ["${local.region}a", "${local.region}b", "${local.region}c"]

@@ -1,0 +1,9 @@
+name: Dynamic Badge
+uses: shneegans/dynamic-badges-action@v1.1.0
+with:
+  auth: ${{ secrets.GIST_SECRET }}
+  gistID: fa4f597de222870ddec0da14ea5a7195
+  filename: badge.json
+  label: version
+  message: 1.0.0
+  color: green

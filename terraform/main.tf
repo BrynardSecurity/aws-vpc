@@ -23,7 +23,7 @@ locals {
   }
 }
 
-module "vpc_example_complete-vpc" {
+module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.11.0"
 

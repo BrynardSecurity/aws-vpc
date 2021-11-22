@@ -14,7 +14,7 @@ provider "aws" {
 
 locals {
   name         = var.vpc_name
-  build_date   = formatdate("YYYY-MM-DD")
+  build_date   = formatdate("YYYY-MM-DD", timestamp())
   build_branch = var.build_branch
   region       = var.aws_region
   tags = {

@@ -13,10 +13,10 @@ provider "aws" {
 }
 
 locals {
-  name   = var.vpc_name
-  build_date = formatdate("YYYY-MM-DD")
+  name         = var.vpc_name
+  build_date   = formatdate("YYYY-MM-DD")
   build_branch = var.build_branch
-  region = var.aws_region
+  region       = var.aws_region
   tags = {
     "Account ID"    = var.aws_account
     "Account Alias" = var.aws_account_alias

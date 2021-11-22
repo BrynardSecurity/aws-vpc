@@ -40,8 +40,8 @@ module "vpc" {
   enable_dns_hostnames = true
   enable_dns_support   = true
 
-  enable_classiclink             = true
-  enable_classiclink_dns_support = true
+  enable_classiclink             = false
+  enable_classiclink_dns_support = false
 
   enable_nat_gateway = true
   single_nat_gateway = true

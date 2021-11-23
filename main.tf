@@ -92,7 +92,7 @@ module "vpc" {
   default_security_group_ingress = []
   default_security_group_egress  = []
 
-  enable_flow_log = false
+  enable_flow_log = true
 }
 
 module "vpc_endpoints_nocreate" {

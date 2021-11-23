@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-    organization = "BrynardSecurity-test"
+    organization = "BrynardSecurity"
 
     workspaces {
-      name = "AWS-VPC_Devops-Test"
+      name = "aws_ustxmain_core_vpc"
     }
   }
 }
